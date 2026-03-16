@@ -17,9 +17,8 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Group Members:\nMan Yuan\nZexu Wang\nJakub Bolka\nAmelia Polak"
+        android:text="Group Members: Your Names"
         android:textSize="18sp"
-        android:gravity="center"
         android:layout_marginBottom="24dp" />
 
     <Button
