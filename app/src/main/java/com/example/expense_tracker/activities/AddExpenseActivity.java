@@ -6,6 +6,7 @@ import android.text.TextUtils;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
+import android.content.Intent;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -37,7 +38,16 @@ public class AddExpenseActivity extends AppCompatActivity {
                     || TextUtils.isEmpty(amount) || TextUtils.isEmpty(date)) {
                 Toast.makeText(this, "Please complete all fields", Toast.LENGTH_SHORT).show();
             } else {
-                Toast.makeText(this, "Expense added successfully", Toast.LENGTH_SHORT).show();
+
+                String expense = title + " - " + category + " - " + amount + " - " + date;
+
+                com.example.expense_tracker.DataManager.expenses.add(expense);
+
+                Toast.makeText(this, "Expense added", Toast.LENGTH_SHORT).show();
+
+                Intent intent = new Intent(AddExpenseActivity.this, ExpenseListActivity.class);
+                startActivity(intent);
+
             }
         });
     }
