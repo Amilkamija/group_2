@@ -5,11 +5,13 @@ import android.os.Bundle;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ListView;
+import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.expense_tracker.DataManager;
 import com.example.expense_tracker.R;
+import android.view.View;
 
 public class ExpenseListActivity extends AppCompatActivity {
 
@@ -24,6 +26,8 @@ public class ExpenseListActivity extends AppCompatActivity {
         listViewExpenses = findViewById(R.id.listViewExpenses);
         btnBackHome = findViewById(R.id.btnBackHome);
 
+        TextView tvNoExpenses = findViewById(R.id.tvNoExpenses);
+
         ArrayAdapter<String> adapter = new ArrayAdapter<>(
                 this,
                 android.R.layout.simple_list_item_1,
@@ -31,6 +35,14 @@ public class ExpenseListActivity extends AppCompatActivity {
         );
 
         listViewExpenses.setAdapter(adapter);
+
+        if (DataManager.expenses == null || DataManager.expenses.isEmpty()) {
+            tvNoExpenses.setVisibility(View.VISIBLE);
+            listViewExpenses.setVisibility(View.GONE);
+        } else {
+            tvNoExpenses.setVisibility(View.GONE);
+            listViewExpenses.setVisibility(View.VISIBLE);
+        }
 
         btnBackHome.setOnClickListener(v -> {
             Intent intent = new Intent(ExpenseListActivity.this, HomeActivity.class);
