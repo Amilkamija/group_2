@@ -3,28 +3,51 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:gravity="center"
     android:padding="24dp">
 
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:orientation="vertical"
+        android:gravity="center">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="24dp"
+            android:text="Welcome to Expense Tracker"
+            android:textSize="22sp"
+            android:textStyle="bold"
+            android:textColor="#1A1A1A"
+            android:gravity="center"
+            android:fontFamily="sans-serif-medium" />
+
+        <Button
+            android:id="@+id/btnViewExpenses"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:text="View Expenses" />
+
+        <Button
+            android:id="@+id/btnAddExpense"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="Add Expense" />
+
+    </LinearLayout>
+
     <TextView
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Home"
-        android:textSize="24sp"
-        android:textStyle="bold"
-        android:layout_marginBottom="24dp" />
-
-    <Button
-        android:id="@+id/btnViewExpenses"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="View Expenses" />
-
-    <Button
-        android:id="@+id/btnAddExpense"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Add Expense"
-        android:layout_marginTop="16dp" />
+        android:text="Created by Group 2"
+        android:textSize="13sp"
+        android:textColor="#1A1A1A"
+        android:gravity="center"
+        android:fontFamily="sans-serif"
+        android:paddingBottom="16dp" />
 
 </LinearLayout>
